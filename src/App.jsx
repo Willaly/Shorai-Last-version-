@@ -135,8 +135,7 @@ function Nav() {
       <nav className="nav">
         <div className="nav__inner">
           <a href="#" className="nav__brand">
-            <img src="/mark-color.png" alt="shōrAI" />
-            shōrAI
+            <img src="/logo_shorai.png" alt="shōrAI" style={{ width: 120, height: "auto" }} />
           </a>
           <div className="nav__links">
             {links.map(l => (
@@ -174,16 +173,16 @@ function Nav() {
    ================================================================= */
 function Hero() {
   const stats = [
-    { val: "+37h", sub: "gagnées par semaine, équipe opérations" },
-    { val: "−42%", sub: "temps de traitement des commandes" },
     { val: "14 j.", sub: "de l'audit à la roadmap chiffrée" },
+    { val: "40%", sub: "de temps moyen gagné sur les tâches automatisées (source McKinsey, 2024)" },
+    { val: "3×", sub: "ROI moyen observé sur les projets IA bien cadrés (source BCG, 2024)" },
   ];
 
   return (
     <section className="hero" style={{ backgroundImage: "url('/bg-hero.jpg')" }}>
       <div className="hero__scrim" />
       <div className="hero__watermark">
-        <img src="/mark-color.png" alt="" className="mark-spin" />
+        <img src="/logo_shorai.png" alt="" className="mark-spin" />
       </div>
       <div className="shell hero__content">
         <div>
@@ -222,23 +221,14 @@ function Hero() {
    TRUST STRIP
    ================================================================= */
 function Trust() {
-  const sectors = [
-    { name: "INDUSTRIE", n: "800" },
-    { name: "SERVICES B2B", n: "120" },
-    { name: "E-COMMERCE", n: "60" },
-    { name: "BIOTECH", n: "240" },
-    { name: "LEGAL", n: "40" },
-    { name: "RETAIL", n: "1200" },
-  ];
+  const sectors = ["INDUSTRIE", "SERVICES B2B", "E-COMMERCE", "BIOTECH", "LEGAL", "RETAIL"];
   return (
     <section className="trust">
       <div className="shell">
-        <p className="trust__label">Secteurs accompagnés</p>
+        <p className="trust__label">Secteurs d'intervention</p>
         <div className="trust__row">
           {sectors.map(s => (
-            <div key={s.name} className="trust__logo">
-              {s.name} <small>{s.n}+ process audités</small>
-            </div>
+            <div key={s} className="trust__logo">{s}</div>
           ))}
         </div>
       </div>
@@ -290,25 +280,25 @@ function Methode() {
    ================================================================= */
 const servicesData = [
   {
-    num: "01", dark: false,
-    title: "Sites & plateformes augmentés par l'IA",
-    tagline: "Des sites qui travaillent pour vous, pas juste qui existent.",
-    desc: "Conception, replatforming et optimisation de sites web et plateformes digitales, enrichis par l'IA : personnalisation, SEO intelligent, chatbots, analytics prédictifs.",
-    items: ["Replatforming & modernisation de stack", "Intégration de briques IA (chatbot, reco, search)", "Optimisation SEO et performance", "Sites vitrines, e-commerce, plateformes métier"],
-  },
-  {
-    num: "02", dark: true,
+    num: "01", dark: true,
     title: "Consulting stratégie IA",
     tagline: "Identifier les cas d'usage à fort ROI avant d'investir.",
     desc: "Diagnostic de maturité, cadrage stratégique, roadmap IA priorisée. On vous dit Go ou NoGo, avec des livrables actionnables et zéro zone grise.",
     items: ["Workshop cadrage (2-3 jours)", "Diagnostic IA complet (2-4 semaines)", "Scoring ROI par cas d'usage", "RACI, hypothèses, KPIs dès le cadrage"],
   },
   {
-    num: "03", dark: false,
+    num: "02", dark: false,
     title: "Automatisation IA",
     tagline: "Libérer vos équipes des tâches répétitives.",
     desc: "Identification, conception et déploiement d'automatisations métier alimentées par l'IA. Du process mapping au workflow autonome.",
     items: ["Audit des process automatisables", "Conception et build des workflows IA", "Intégration dans vos outils existants", "Mesure du temps libéré et du ROI réel"],
+  },
+  {
+    num: "03", dark: false,
+    title: "Sites & plateformes augmentés par l'IA",
+    tagline: "Des sites qui travaillent pour vous, pas juste qui existent.",
+    desc: "Conception, replatforming et optimisation de sites web et plateformes digitales, enrichis par l'IA : personnalisation, SEO intelligent, chatbots, analytics prédictifs.",
+    items: ["Replatforming & modernisation de stack", "Intégration de briques IA (chatbot, reco, search)", "Optimisation SEO et performance", "Sites vitrines, e-commerce, plateformes métier"],
   },
 ];
 
@@ -864,8 +854,7 @@ function Footer() {
         <div className="footer__inner">
           <div>
             <div className="footer__brand">
-              <img src="/mark-color.png" alt="shōrAI" />
-              shōrAI
+              <img src="/logo_shorai.png" alt="shōrAI" style={{ width: 100, height: "auto" }} />
             </div>
             <p className="footer__tag">
               Consulting IA. Audit, stratégie, déploiement. Productivité mesurée. Future, engineered today.

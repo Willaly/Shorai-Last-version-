@@ -15,6 +15,26 @@
     <title>shōrAI Consulting · L'IA au service de votre productivité</title>
   </head>
   <body>
+    <!-- Loading screen -->
+    <div id="loader" style="position:fixed;inset:0;z-index:9999;background:#02062A;display:flex;flex-direction:column;align-items:center;justify-content:center;transition:opacity .4s">
+      <img src="/logo_shorai.png" alt="shōrAI" style="width:120px;height:auto;animation:loaderSpin 3s linear infinite" />
+    </div>
+    <style>
+      @keyframes loaderSpin{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+    </style>
+    <script>
+      // Hide loader after 2s or when app mounts, whichever comes last
+      const LOADER_MIN = 2000;
+      const loaderStart = Date.now();
+      window.__hideLoader = function() {
+        const elapsed = Date.now() - loaderStart;
+        const wait = Math.max(0, LOADER_MIN - elapsed);
+        setTimeout(function() {
+          const el = document.getElementById('loader');
+          if (el) { el.style.opacity = '0'; setTimeout(function() { el.remove(); }, 400); }
+        }, wait);
+      };
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
